@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+  <script>
+    window.process = { env: { NODE_ENV: 'production' } };
+  </script>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit-html';
+    import '../dist/maps-test.js';
+
+    const title = 'Hello owc World!';
+    render(
+      html`
+        <maps-test .title=${title}>
+          some more light-dom
+        </maps-test>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
